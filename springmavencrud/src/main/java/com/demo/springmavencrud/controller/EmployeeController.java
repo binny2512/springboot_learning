@@ -33,7 +33,7 @@ public class EmployeeController
     @GetMapping("/employees")
     public List<Employee> viewAllEmployee(@RequestParam(required = false) String empType){
 
-        List<Employee> empList = empService.viewAllEmployee();
+        List<Employee> empList = empService.viewAllEmployee(empType);
         return empList;
     }
 
@@ -44,7 +44,7 @@ public class EmployeeController
         return emp;
     }
 
-    @PutMapping("/employees/{empId}")
+    @PatchMapping("/employees/{empId}")
     public String saveOrUpdateEmployeeByID(@PathVariable int empId, @RequestParam String email, @RequestParam String ph){
 
         empService.updateEmployeeById(empId, email, ph);

@@ -38,9 +38,17 @@ public class EmployeeService {
         //empList.add(employee);
     }
 
-    public List<Employee> viewAllEmployee()
+    public List<Employee> viewAllEmployee(String type)
     {
-        return employeeRepository.findAll();
+        if(type==null){
+            return employeeRepository.findAll();
+        }else if(type.equalsIgnoreCase("FTE")){
+            return employeeRepository.getFTEEmployees();
+        }else if(type.equalsIgnoreCase("FTC")) {
+            return employeeRepository.getFTCEmployees();
+        }
+        return new ArrayList<>();
+
     }
 
     public Employee viewEmployeeById(int empId) {
@@ -49,13 +57,8 @@ public class EmployeeService {
 
     public void updateEmployeeById(int empId, String email, String ph) {
 
-        for(Employee emp : empList){
-            if(emp.getEmpID()==empId){
-                emp.setEmail(email);
-                emp.setPh(ph);
-            }
-
-        }
+      //  employeeRepository.save()
+        
 
     }
 
