@@ -1,9 +1,8 @@
-package com.demo.springmavencrud.model;
+package com.demo.springmavencrud.tableperclass.model;
 
 import javax.persistence.*;
 
 @Entity
-//@DiscriminatorValue("FTE")
 @PrimaryKeyJoinColumn(name = "empID")
 public class EmployeeFTE extends Employee
 {

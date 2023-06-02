@@ -1,13 +1,10 @@
-package com.demo.springmavencrud.model;
+package com.demo.springmavencrud.tableperclass.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 
 @Entity
-//@Table(name="test_employee")
-//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-//@DiscriminatorColumn(name = "type",discriminatorType = DiscriminatorType.STRING)
 @Table(name = "test_employee_joined")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Employee
@@ -21,7 +18,6 @@ public class Employee
    private String email;
     private String ph;
     private String address;
-
 
     public Employee() {
     }

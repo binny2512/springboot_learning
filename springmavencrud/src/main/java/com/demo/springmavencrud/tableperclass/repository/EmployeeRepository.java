@@ -1,6 +1,7 @@
-package com.demo.springmavencrud.repository;
+package com.demo.springmavencrud.tableperclass.repository;
 
-import com.demo.springmavencrud.model.Employee;
+import com.demo.springmavencrud.tableperclass.model.Employee;
+import com.demo.springmavencrud.tableperhierarchy.model.Employee1;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

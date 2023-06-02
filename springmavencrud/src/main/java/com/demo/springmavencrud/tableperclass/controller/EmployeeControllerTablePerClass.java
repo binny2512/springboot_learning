@@ -1,19 +1,16 @@
-package com.demo.springmavencrud.controller;
+package com.demo.springmavencrud.tableperclass.controller;
 
-import com.demo.springmavencrud.model.Employee;
-import com.demo.springmavencrud.model.EmployeeFTC;
-import com.demo.springmavencrud.model.EmployeeFTE;
-import com.demo.springmavencrud.service.EmployeeService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.demo.springmavencrud.tableperclass.model.Employee;
+import com.demo.springmavencrud.tableperclass.model.EmployeeFTC;
+import com.demo.springmavencrud.tableperclass.model.EmployeeFTE;
+import com.demo.springmavencrud.tableperclass.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class EmployeeController
+public class EmployeeControllerTablePerClass
 {
     @Autowired
     private EmployeeService empService;
@@ -30,7 +27,7 @@ public class EmployeeController
        // return "Created Full time employee";
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/employees/")
     public List<Employee> viewAllEmployee(@RequestParam(required = false) String empType){
 
         List<Employee> empList = empService.viewAllEmployee(empType);
@@ -55,13 +52,6 @@ public class EmployeeController
     public String deleteEmployeeByID(@PathVariable int empId){
 
         return empService.deleteEmployeeById(empId);
-        //return "Employee Deleted";
     }
 
-    /*public static void main(String[] args) throws JsonProcessingException {
-        EmployeeFTE emp = new EmployeeFTE(1,"A","test@gmail.com","1234", "test address", true, true, true, "FTE");
-        ObjectMapper mapper = new ObjectMapper();
-        System.out.println(mapper.writeValueAsString(emp));
-
-    }*/
 }

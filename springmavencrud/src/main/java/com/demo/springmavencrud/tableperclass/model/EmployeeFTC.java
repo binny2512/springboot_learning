@@ -1,13 +1,10 @@
-package com.demo.springmavencrud.model;
+package com.demo.springmavencrud.tableperclass.model;
 
-
-import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-//@DiscriminatorValue("FTC")
 @PrimaryKeyJoinColumn(name = "empID")
 public class EmployeeFTC extends Employee{
     @NotBlank
